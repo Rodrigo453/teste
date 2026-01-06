@@ -1,0 +1,6 @@
+#@AlibiPerfeito_CRUD_HostAddress = http://localhost:5285
+
+#GET {{AlibiPerfeito_CRUD_HostAddress}}/weatherforecast/
+#Accept: application/json
+
+###

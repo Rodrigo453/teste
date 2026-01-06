@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="alibiperfeitodb@dpg-cthid523esus73b6tu80-a.oregon-postgres.render.com" uuid="e17ced5c-28e4-47e3-bce9-d6ab890b8edf">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://dpg-cthid523esus73b6tu80-a.oregon-postgres.render.com:5432/alibiperfeitodb</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="alibiperfeitodb_tfgn@dpg-cu4kcvt2ng1s738j39fg-a.oregon-postgres.render.com" uuid="b4fb71de-c510-46cb-b37a-a75d74a266ab">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://dpg-cu4kcvt2ng1s738j39fg-a.oregon-postgres.render.com:5432/alibiperfeitodb_tfgn</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>

@@ -1,0 +1,15 @@
+name: Trigger 
+  
+on:  
+  push:                        
+    branches: ["main"]   
+  
+jobs:  
+  call-ci:
+    uses: rodrigo453/AlibiPerfeito-GitOps/.github/workflows/ci.yml@main
+    secrets: inherit
+    with:
+      URL_GIT: "https://github.com/Rodrigo453/AlibiPerfeito-CRUD.git" #URL do repositório que rodará o semantic-release
+      DOCKER_TAG: "rodrigo453/alibiperfeito-crud:" #tag da imagem docker ex USER/image:version
+      REPOSITORY:  rodrigo453/AlibiPerfeito-GitOps #repositório que o CD fará o checkout
+      PROJECT_DEPLOY: AlibiPerfeito-CRUD #Projeto que o ArgoCD fica escutando
