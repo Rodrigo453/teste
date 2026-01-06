@@ -1,15 +1,31 @@
-name: Trigger 
-  
-on:  
-  push:                        
-    branches: ["main"]   
-  
-jobs:  
-  call-ci:
-    uses: rodrigo453/AlibiPerfeito-GitOps/.github/workflows/ci.yml@main
-    secrets: inherit
-    with:
-      URL_GIT: "https://github.com/Rodrigo453/AlibiPerfeito-CRUD.git" #URL do repositório que rodará o semantic-release
-      DOCKER_TAG: "rodrigo453/alibiperfeito-crud:" #tag da imagem docker ex USER/image:version
-      REPOSITORY:  rodrigo453/AlibiPerfeito-GitOps #repositório que o CD fará o checkout
-      PROJECT_DEPLOY: AlibiPerfeito-CRUD #Projeto que o ArgoCD fica escutando
+name: Dependency-Check (Dynamic Scan)
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  sca:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run OWASP Dependency-Check
+        uses: dependency-check/Dependency-Check_Action@v3.0.2
+        with:
+          project: ${{ github.repository }}
+          path: .
+          format: ALL
+          out: reports
+          failOnCVSS: 9
+        env:
+          JAVA_OPTS: -Xmx4g
+
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: dependency-check-report
+          path: reports
